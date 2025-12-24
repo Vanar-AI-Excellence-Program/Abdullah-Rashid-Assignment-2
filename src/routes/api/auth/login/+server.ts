@@ -32,14 +32,14 @@ export const POST = async (event: RequestEvent) => {
 			return json({ error: 'Your account has been disabled. Please contact an administrator.' }, { status: 403 });
 		}
 
-		// Check if email is verified
-		// if (!user.emailVerified) {
-		// 	return json({
-		// 		error: 'Please verify your email before signing in',
-		// 		needsVerification: true,
-		// 		email: user.email
-		// 	}, { status: 403 });
-		// }
+		Check if email is verified
+		if (!user.emailVerified) {
+			return json({
+				error: 'Please verify your email before signing in',
+				needsVerification: true,
+				email: user.email
+			}, { status: 403 });
+		}
 
 		const sessionToken = await createSession(user.id);
 		setSessionCookie(event, sessionToken);
