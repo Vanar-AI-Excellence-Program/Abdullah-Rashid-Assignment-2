@@ -21,7 +21,7 @@ A modern authentication application built with SvelteKit 5, featuring email/pass
 - ✅ GitHub Sign-In
 
 ### Email Flows
-- ✅ Email verification on signup
+- ✅ Email verification on signup(If you want to skip email verification just comment out lines 35-42 in src/routes/api/auth/+server.ts)
 - ✅ Password reset via secure link
 
 ### Admin Dashboard
